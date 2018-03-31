@@ -59,9 +59,9 @@ int main()
 
 ## Plant UML diagrams
 [PlantUML](http://plantuml.com) is an excellent tool for drawing UML diagrams. Install the PlantUML plugin 
-in any of JetBrains' products, and you have a state of the art UML editor. Best thing, no messing around 
-with the mouse etc. Just write your textual description of the diagram, and PlantUML does the rest. For 
-example, the following text
+in any of JetBrains' products, and you have a state of the art UML editor. The best thing is there is no 
+messing around with the mouse etc. Just write your textual description of the diagram in an extremely 
+intuitive DSL, and PlantUML does the rest. For example, the following text
 
 ```
 @startuml
@@ -83,4 +83,6 @@ A <-- B: Authentication Response
 @enduml
 ```
 
-is rendered as the following ![image](img/test.png)
+is rendered as
+
+![image](/static/test.png)
