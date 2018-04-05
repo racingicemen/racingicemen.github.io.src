@@ -1,0 +1,6 @@
+@startuml
+actor User as U
+actor ToDoList as T
+
+U -> T : create_todo
+@enduml

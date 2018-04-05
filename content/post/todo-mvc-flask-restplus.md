@@ -25,3 +25,6 @@ In this blog post, I will go through the steps in building a simple ToDo applica
 post is based on the [quickstart tutorial](http://flask-restplus.readthedocs.io/en/stable/quickstart.html)
 except we will be plugging in to [PostgreSQL](http://postgresql.org) via 
 [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org).
+
+# Design
+First let's look briefly at the design of the TodoMVC application.
