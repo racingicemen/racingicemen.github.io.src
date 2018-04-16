@@ -1,0 +1,71 @@
+@startuml belief-mapper-class-diagram
+
+skinparam nodesep 100
+
+class Belief {
+    name: string
+    definition: string
+    resource: string
+    category: Category
+    starred: boolean
+}
+
+class Connection {
+    belief_1: Belief
+    belief_2: Belief
+    count: integer
+    strong_connections: list<integer>
+}
+
+class Demographic {
+    gender: string
+    age: integer
+    religion: string
+    country: string
+    state: string
+    education_level: string
+}
+
+class User {
+    username: string
+    answered_questions: list<integer>
+    demographic: Demographic
+}
+
+class Category {
+    name: string
+}
+
+class Comment {
+    body: string
+    votes: integer
+    user: User
+}
+
+class Stat {
+    user_count: integer
+    comment_count: integer
+}
+
+class UserBelief {
+    user: User
+    belief: Belief
+    conviction: integer
+}
+
+class BeliefStats {
+    stat: Stat
+    belief: Belief
+    avergage_conviction: float
+}
+
+Demographic -right User
+Stat -- Comment
+Stat -right BeliefStats
+BeliefStats -right Belief
+User -right UserBelief
+UserBelief -- Belief
+Belief -- Category
+Belief -- Belief : connection
+@enduml
+

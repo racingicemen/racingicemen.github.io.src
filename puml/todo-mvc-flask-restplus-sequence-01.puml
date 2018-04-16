@@ -1,0 +1,39 @@
+@startuml todo-mvc-flask-restplus-sequence
+
+actor User as U
+actor ToDoList as TDL
+actor ToDo as TD
+database DB as D
+
+group Creating a ToDo
+U -> TDL : create_todo
+note left: description, \ndue_datetime
+TDL -> TD : create
+TDL -> D : store
+TDL <-- D: id
+U <-- TDL: id
+end
+
+group Reading a ToDo
+U -> TDL : read_todo
+note left: id\ndescription\nstatus\ndue_datetime
+TDL -> D: read
+TDL <-- D: id
+U <-- TDL : id
+end
+
+group Updating a ToDo
+U -> TDL : update_todo
+note left: id,\nstatus\ndue_datetime
+TDL -> TD: update
+TDL -> D: update
+end
+
+group Deleting a ToDo
+U -> TDL: delete_todo
+note left: id
+TDL -> TD: delete
+TDL -> D: remove
+end
+
+@enduml

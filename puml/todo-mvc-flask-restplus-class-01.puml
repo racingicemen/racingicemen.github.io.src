@@ -1,0 +1,23 @@
+@startuml todo-mvc-flask-restplus-class
+
+skinparam nodesep 100
+
+class ToDo {
+    description : string
+    status : Status
+    due_datetime : DateTime
+}
+
+class ToDoList{
+    + create_todo()
+    + list_todos()
+    + delete_todo()
+    + update_todo()
+}
+
+ToDoList "1" *-right "*" ToDo
+
+hide ToDo circle
+hide ToDoList circle
+
+@enduml
